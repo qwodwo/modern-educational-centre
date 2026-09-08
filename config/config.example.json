@@ -1,0 +1,19 @@
+{
+  "site": {
+    "name": "Modern Educational Centre",
+    "baseUrl": "http://127.0.0.1:8000"
+  },
+  "paystack": {
+    "publicKey": "",
+    "secretKey": "",
+    "mode": "test"
+  },
+  "email": {
+    "from": "Modern Educational Centre <moderneducentre@gmail.com>",
+    "gmailUser": "",
+    "gmailAppPassword": ""
+  },
+  "sms": {
+    "provider": "none"
+  }
+}

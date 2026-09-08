@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Modern Educational Centre</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo/school logo.jpg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #f1f5f9; color: #0f172a; }
+        .admin-top { background: #1a2a4a; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: .8rem 1.5rem; position: sticky; top: 0; z-index: 20; }
+        .admin-brand { display: flex; align-items: center; gap: .7rem; font-weight: 700; font-size: 1.05rem; }
+        .admin-brand img { height: 38px; width: auto; border-radius: 6px; }
+        .admin-brand small { display: block; font-size: .7rem; font-weight: 400; opacity: .75; }
+        .admin-user { display: flex; align-items: center; gap: 1rem; font-size: .9rem; }
+        .admin-user .who { opacity: .85; }
+        .a-btn { border: none; border-radius: 6px; padding: .45rem .85rem; font-size: .83rem; cursor: pointer; font-weight: 600; }
+        .a-btn.primary { background: #3b82f6; color: #fff; }
+        .a-btn.ghost { background: rgba(255,255,255,.15); color: #fff; }
+        .a-btn.danger { background: #dc2626; color: #fff; }
+        .a-btn.success { background: #15803d; color: #fff; }
+        .a-btn.warn { background: #d97706; color: #fff; }
+        .a-btn.sm { padding: .28rem .6rem; font-size: .76rem; }
+        .a-btn:disabled { opacity: .45; cursor: default; }
+        .admin-body { display: grid; grid-template-columns: 230px 1fr; min-height: calc(100vh - 61px); }
+        .admin-nav { background: #0f1f3d; padding: 1rem .6rem; color: #cbd5e1; }
+        .admin-nav .nav-title { font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; opacity: .6; padding: 0 .8rem .5rem; }
+        .admin-nav button { display: block; width: 100%; text-align: left; background: none; border: none; color: #cbd5e1; padding: .6rem .8rem; border-radius: 8px; cursor: pointer; font-size: .88rem; margin-bottom: .2rem; }
+        .admin-nav button:hover { background: rgba(255,255,255,.08); color: #fff; }
+        .admin-nav button.active { background: #3b82f6; color: #fff; }
+        .admin-main { padding: 1.5rem 2rem 3rem; max-width: 1200px; }
+        .admin-main h2 { margin-bottom: 1rem; font-size: 1.35rem; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem 1.1rem; }
+        .stat .num { font-size: 1.6rem; font-weight: 800; color: #1a2a4a; }
+        .stat .lbl { font-size: .78rem; color: #475569; margin-top: .2rem; }
+        .panel { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.2rem; margin-bottom: 1.4rem; }
+        .panel h3 { margin-bottom: .9rem; font-size: 1rem; }
+        .grid2 { display: grid; grid-template-columns: 300px 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 900px) { .admin-body { grid-template-columns: 1fr; } .admin-nav { display: flex; flex-wrap: wrap; gap: .3rem; } .admin-nav button { width: auto; } .grid2 { grid-template-columns: 1fr; } }
+        table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+        th { text-align: left; color: #475569; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; padding: .5rem .6rem; border-bottom: 2px solid #e2e8f0; }
+        td { padding: .6rem; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
+        tr:hover td { background: #f8fafc; }
+        .badge { display: inline-block; padding: .18rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 700; }
+        .badge.received { background: #fef3c7; color: #92400e; }
+        .badge.reviewed { background: #dbeafe; color: #1e40af; }
+        .badge.approved { background: #dcfce7; color: #166534; }
+        .badge.rejected { background: #fee2e2; color: #991b1b; }
+        .badge.success { background: #dcfce7; color: #166534; }
+        .badge.pending { background: #fef3c7; color: #92400e; }
+        .badge.failed { background: #fee2e2; color: #991b1b; }
+        .forms label { display: block; font-size: .8rem; color: #475569; margin: .55rem 0 .2rem; }
+        .forms input, .forms select, .forms textarea { width: 100%; padding: .5rem .6rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: .86rem; font-family: inherit; }
+        .forms .a-btn { margin-top: .8rem; }
+        .forms .row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+        .muted { color: #64748b; font-size: .82rem; }
+        .empty { color: #64748b; padding: 1rem 0; }
+        .avail { color: #15803d; font-weight: 700; }
+        .over { color: #b91c1c; font-weight: 700; }
+        .toast { position: fixed; bottom: 1.2rem; right: 1.2rem; background: #0f172a; color: #fff; padding: .7rem 1rem; border-radius: 8px; font-size: .85rem; opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 50; }
+        .toast.show { opacity: 1; }
+        .dl { font-size: .8rem; color: #3b82f6; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="admin-top">
+        <div class="admin-brand">
+            <img src="../images/logo/school logo.jpg" alt="MEC logo">
+            <span>Modern Educational Centre<small>Administration Panel</small></span>
+        </div>
+        <div class="admin-user">
+            <span class="who" id="admin-user-name">Administrator</span>
+            <button class="a-btn ghost" id="admin-logout">Logout</button>
+        </div>
+    </header>
+
+    <div class="admin-body">
+        <nav class="admin-nav">
+            <div class="nav-title">Manage</div>
+            <button data-view="overview">Overview</button>
+            <button data-view="applications">Applications</button>
+            <button data-view="fees">Fees</button>
+            <button data-view="payments">Payments</button>
+            <button data-view="news">News</button>
+            <button data-view="events">Events</button>
+            <button data-view="reports">Reports</button>
+            <button data-view="help">Login Help</button>
+        </nav>
+        <main class="admin-main" id="admin-main"></main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/portal.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "modern-educational-centre-website",
+  "version": "4.0.0",
+  "description": "Modern Educational Centre website with Administration Dashboard, Payments and Notifications (Phase 4)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node e2e-check.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  }
+}

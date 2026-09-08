@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Runtime data store (regenerated on first boot — contains user accounts & records)
+data/
+
+# Local configuration with real secrets (structure is in config/config.example.json)
+config/config.json
+
+# Logs & process files
+*.log
+mec-server.pid
+
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
