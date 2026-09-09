@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { url: 'index.html', title: 'Home', keywords: 'home welcome preschool kindergarten creche nursery day boarding quality education' },
         { url: 'about.html', title: 'About Us', keywords: 'about mission vision values history staff school overview' },
         { url: 'admissions.html', title: 'Admissions', keywords: 'admission apply enroll enrolment fees requirements forms application' },
+        { url: 'admission-process.html', title: 'Admission Process', keywords: 'admission process steps enquiry tour documents assessment enrollment welcome' },
+        { url: 'admission-policy.html', title: 'Admission Policy', keywords: 'admission policy requirements documents age placement fairness fees reports' },
         { url: 'academics.html', title: 'Academics', keywords: 'academics curriculum subjects junior high pre-k grades classes programmes learning' },
         { url: 'day-school.html', title: 'Day School', keywords: 'day school daily bus transport schedule transportation' },
         { url: 'boarding-life.html', title: 'Boarding Life', keywords: 'boarding hostel dorm dormitory residential life' },
