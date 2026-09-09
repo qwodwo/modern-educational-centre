@@ -6,7 +6,7 @@
     <title>Modern Educational Centre - Admission Form</title>
     <meta name="description" content="Complete the Modern Educational Centre admission form online or download a copy to print and fill.">
     <link rel="icon" type="image/x-icon" href="images/logo/school logo.jpg">
-    <link rel="stylesheet" href="css/styles.css?v=7">
+    <link rel="stylesheet" href="css/styles.css?v=8">
 </head>
 <body>
 
@@ -114,149 +114,241 @@
     <!-- Main Content -->
     <main id="main" class="content-sections">
 
-        <!-- Admission Form Section -->
-        <section class="admissions-section">
+<!-- Admission Form Section -->
+        <section class="admissions-section admission-form-page" aria-label="Admission form">
             <div class="section-container">
                 <div class="section-header">
                     <h2>Admission Form</h2>
+                    <p>Complete the form below to apply, or download a fillable PDF copy to fill in your own time.</p>
                 </div>
                 <div class="section-content">
-<div class="apply-now-box">
-                                        <h3>Admission Form</h3>
-                                        <p>Complete our admission form below or download a copy of the admission form here.</p>
-                                        <a href="admission-form-print.html" class="btn-apply" target="_blank" rel="noopener">Download</a>
+
+                    <!-- Intro / download card -->
+                    <div class="form-intro">
+                        <span class="form-intro-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 16.5a.75.75 0 0 0 .75-.75V4.81l2.72 2.72a.75.75 0 1 0 1.06-1.06l-4-4a.75.75 0 0 0-1.06 0l-4 4a.75.75 0 0 0 1.06 1.06l2.72-2.72v10.94c0 .414.336.75.75.75Z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M4.5 12.75a.75.75 0 0 1 .75.75v5.25a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V13.5a.75.75 0 0 1 1.5 0v5.25a3 3 0 0 1-3 3H6.75a3 3 0 0 1-3-3V13.5a.75.75 0 0 1 .75-.75Z"/></svg>
+                        </span>
+                        <div class="form-intro-text">
+                            <h3>Ready to join Modern Educational Centre?</h3>
+                            <p>Complete our admission form online below, or download a fillable PDF copy and send it to our admissions team.</p>
+                        </div>
+                        <div class="form-intro-actions">
+                            <button type="button" class="btn-apply" id="downloadPdfBtn">Download PDF</button>
+                            <a href="admission-form-print.html" class="btn-secondary" target="_blank" rel="noopener">Print Version</a>
+                        </div>
+                    </div>
+
+                    <!-- Segmented tab switch -->
+                    <div class="application-tabs seg-tabs" role="tablist" aria-label="Application type">
+                        <button type="button" class="tab-link seg-tab active" id="tab-day" role="tab" aria-selected="true" aria-controls="day-tab" data-tab="day">
+                            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5a3.25 3.25 0 0 0-3.25 3.25v1.1A3.75 3.75 0 0 0 4.5 9.5v5.75A3.25 3.25 0 0 0 7.75 18.5h4.5a3.25 3.25 0 0 0 3.25-3.25V9.5a3.75 3.75 0 0 0-2.25-3.65v-1.1A3.25 3.25 0 0 0 10 1.5Zm-1.75 3.25a1.75 1.75 0 1 1 3.5 0v.79A3.6 3.6 0 0 0 10 5.75a3.6 3.6 0 0 0-1.75.21v-1.21Zm-1.5 3.5a2.25 2.25 0 0 0-2.25 2.25v5.75a1.75 1.75 0 0 0 1.75 1.75h4.5a1.75 1.75 0 0 0 1.75-1.75V10.5a2.25 2.25 0 0 0-2.25-2.25h-3.5Z"/></svg>
+                            Day School Admission
+                        </button>
+                        <button type="button" class="tab-link seg-tab" id="tab-boarding" role="tab" aria-selected="false" aria-controls="boarding-tab" data-tab="boarding">
+                            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1a.75.75 0 0 1 .4.124l5.5 3.75a.75.75 0 0 1-.4 1.376V7a2 2 0 0 1 1.8 1.35l.8 2.4a2 2 0 0 1-1.9 2.65H16v2.5a.75.75 0 0 1-1.5 0V13.4h-9V16a.75.75 0 0 1-1.5 0v-2.6H2.8a2 2 0 0 1-1.9-2.65l.8-2.4A2 2 0 0 1 3.5 7V6.25a.75.75 0 0 1-.4-1.376l5.5-3.75A.75.75 0 0 1 10 1Zm.75 5.376L10 5.9l-.75.476V7h1.5v-.624ZM5 8.5h10a.5.5 0 0 0-.45-.4h-.05a2.5 2.5 0 0 0-2.5 2.4L10 10.5l-2-.001V10a2.5 2.5 0 0 0-2.5-2.5h-.05a.5.5 0 0 0-.45.4v.6ZM5.35 10 4.6 12.55c-.05.15.08.3.24.3h.16a1.4 1.4 0 0 0 0-2.8l.35-.35Z"/></svg>
+                            Boarding Admission
+                        </button>
+                    </div>
+
+                    <!-- Application form -->
+                    <form class="application-form app-form" id="applicationForm">
+
+                        <!-- Day School tab -->
+                        <div class="tab-content active" id="day-tab" role="tabpanel" aria-labelledby="tab-day">
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">1</span>
+                                <h3>Student Information</h3>
+                            </div>
+
+                            <div class="field-grid">
+                                <div class="form-group">
+                                    <label for="d-name">Student's Full Name <span class="req" aria-hidden="true">*</span></label>
+                                    <input type="text" id="d-name" name="studentName" required autocomplete="name" placeholder="e.g. Kwame Mensah" maxlength="80">
+                                </div>
+                                <div class="form-group">
+                                    <label for="d-dob">Date of Birth <span class="req" aria-hidden="true">*</span></label>
+                                    <input type="date" id="d-dob" name="dob" required>
+                                </div>
+                            </div>
+
+                            <div class="field-grid">
+                                <div class="form-group">
+                                    <label for="d-grade">Current Grade Level <span class="req" aria-hidden="true">*</span></label>
+                                    <select id="d-grade" name="gradeLevel" required>
+                                        <option value="">Select grade</option>
+                                        <option value="preschool">Preschool</option>
+                                        <option value="kindergarten">Kindergarten</option>
+                                        <option value="grade1">Grade 1</option>
+                                        <option value="grade2">Grade 2</option>
+                                        <option value="grade3">Grade 3</option>
+                                        <option value="grade4">Grade 4</option>
+                                        <option value="grade5">Grade 5</option>
+                                        <option value="grade6">Grade 6</option>
+                                        <option value="grade7">Grade 7</option>
+                                        <option value="grade8">Grade 8</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Programme Interest</label>
+                                    <div class="choice-chips" role="group" aria-label="Programme interest">
+                                        <label class="chip"><input type="checkbox" name="programme" value="early-years"><span>Early Years</span></label>
+                                        <label class="chip"><input type="checkbox" name="programme" value="primary"><span>Primary</span></label>
+                                        <label class="chip"><input type="checkbox" name="programme" value="high-school"><span>High School</span></label>
                                     </div>
-                
-                                    <div class="application-tabs">
-                                        <div class="tab-link active" data-tab="day">Day School Admission</div>
-                                        <div class="tab-link" data-tab="boarding">Boarding Admission</div>
+                                    <small class="hint">Preschool-Kindergarten / Grades 1-5 / Grades 6-8</small>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">2</span>
+                                <h3>Day School Options</h3>
+                            </div>
+
+                            <div class="field-grid">
+                                <div class="form-group">
+                                    <label for="d-orient">Has the student attended our orientation?</label>
+                                    <select id="d-orient" name="orientation">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Transportation Need</label>
+                                    <div class="choice-chips" role="group" aria-label="Transportation need">
+                                        <label class="chip"><input type="radio" name="transport" value="yes"><span>Bus transport</span></label>
+                                        <label class="chip"><input type="radio" name="transport" value="no"><span>Own transport</span></label>
                                     </div>
-                
-                                    <form class="application-form" id="applicationForm">
-                                        <div class="tab-content active" id="day-tab">
-                                            <h3>Day School Admission</h3>
-                                            <p>Daily tuition programme for local students. Transportation routes available.</p>
-                
-                                            <div class="form-group">
-                                                <label>Student's Full Name</label>
-                                                <input type="text" required>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Date of Birth</label>
-                                                <input type="date" required>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Current Grade Level</label>
-                                                <select required>
-                                                    <option value="">Select grade</option>
-                                                    <option value="preschool">Preschool</option>
-                                                    <option value="kindergarten">Kindergarten</option>
-                                                    <option value="grade1">Grade 1</option>
-                                                    <option value="grade2">Grade 2</option>
-                                                    <option value="grade3">Grade 3</option>
-                                                    <option value="grade4">Grade 4</option>
-                                                    <option value="grade5">Grade 5</option>
-                                                    <option value="grade6">Grade 6</option>
-                                                    <option value="grade7">Grade 7</option>
-                                                    <option value="grade8">Grade 8</option>
-                                                </select>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Programme Interest</label>
-                                                <label><input type="checkbox" name="programme" value="early-years"> Early Years (Preschool-Kindergarten)</label>
-                                                <label><input type="checkbox" name="programme" value="primary"> Primary (Grades 1-5)</label>
-                                                <label><input type="checkbox" name="programme" value="high-school"> High School (Grades 6-8)</label>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Has the student attended our orientation?</label>
-                                                <select>
-                                                    <option value="">Select</option>
-                                                    <option value="yes">Yes</option>
-                                                    <option value="no">No</option>
-                                                </select>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Document Upload</label>
-                                                <input type="file" accept=".pdf,.jpg,.png,.docx">
-                                                <small>Required: Birth certificate, passport photo, previous school reports</small>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Transportation Need</label>
-                                                <label><input type="radio" name="transport" value="yes"> Yes, need bus transport</label>
-                                                <label><input type="radio" name="transport" value="no"> No, will provide own transport</label>
-                                            </div>
-                
-                                            <button type="submit" class="btn-apply">Submit Day School Application</button>
-                                        </div>
-                
-                                        <div class="tab-content" id="boarding-tab">
-                                            <h3>Boarding Admission</h3>
-                                            <p>Residential programme with full-care accommodation. House system supervision.</p>
-                
-                                            <div class="form-group">
-                                                <label>Student's Full Name</label>
-                                                <input type="text" required>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Date of Birth</label>
-                                                <input type="date" required>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Current Grade Level</label>
-                                                <select required>
-                                                    <option value="">Select grade</option>
-                                                    <option value="grade4">Grade 4</option>
-                                                    <option value="grade5">Grade 5</option>
-                                                    <option value="grade6">Grade 6</option>
-                                                    <option value="grade7">Grade 7</option>
-                                                    <option value="grade8">Grade 8</option>
-                                                </select>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Which Boarding House?</label>
-                                                <select>
-                                                    <option value="">Select house</option>
-                                                    <option value="boys-primary">Boys' Primary House</option>
-                                                    <option value="boys-high">Boys' High School House</option>
-                                                    <option value="girls-primary">Girls' Primary House</option>
-                                                    <option value="girls-high">Girls' High School House</option>
-                                                </select>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Boarding Type</label>
-                                                <label><input type="radio" name="boarding-type" value="full"> Full Boarding (5-7 days/week)</label>
-                                                <label><input type="radio" name="boarding-type" value="weekly"> Weekly Boarding (Monday-Friday)</label>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Any Medical Conditions or Allergies?</label>
-                                                <textarea rows="3" placeholder="Please describe any conditions, medications, or allergies"></textarea>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Document Upload</label>
-                                                <input type="file" accept=".pdf,.jpg,.png,.docx">
-                                                <small>Required: Birth certificate, passport photos, medical records, previous reports</small>
-                                            </div>
-                
-                                            <div class="form-group">
-                                                <label>Parent/Guardian Statement</label>
-                                                <textarea rows="3" placeholder="Why do you choose boarding education for your child?"></textarea>
-                                            </div>
-                
-                                            <button type="submit" class="btn-apply">Submit Boarding Application</button>
-                                        </div>
-                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">3</span>
+                                <h3>Documents</h3>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="d-docs">Document Upload</label>
+                                <label class="dropzone" for="d-docs">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16.5a.75.75 0 0 0 .75-.75V4.81l2.72 2.72a.75.75 0 1 0 1.06-1.06l-4-4a.75.75 0 0 0-1.06 0l-4 4a.75.75 0 0 0 1.06 1.06l2.72-2.72v10.94c0 .414.336.75.75.75Z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M4.5 12.75a.75.75 0 0 1 .75.75v5.25a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V13.5a.75.75 0 0 1 1.5 0v5.25a3 3 0 0 1-3 3H6.75a3 3 0 0 1-3-3V13.5a.75.75 0 0 1 .75-.75Z"/></svg>
+                                    <span class="dropzone-main">Click to upload documents</span>
+                                    <span class="dropzone-sub">Supports PDF, JPG, PNG or DOCX (max 3 files)</span>
+                                </label>
+                                <input type="file" id="d-docs" name="documents" accept=".pdf,.jpg,.png,.docx" multiple hidden>
+                                <small class="hint">Required: Birth certificate, passport photo, previous school reports</small>
+                            </div>
+
+                            <button type="submit" class="btn-apply form-submit">Submit Day School Application</button>
+                        </div>
+
+                        <!-- Boarding tab -->
+                        <div class="tab-content" id="boarding-tab" role="tabpanel" aria-labelledby="tab-boarding">
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">1</span>
+                                <h3>Student Information</h3>
+                            </div>
+
+                            <div class="field-grid">
+                                <div class="form-group">
+                                    <label for="b-name">Student's Full Name <span class="req" aria-hidden="true">*</span></label>
+                                    <input type="text" id="b-name" name="studentName" required autocomplete="name" placeholder="e.g. Ama Owusu" maxlength="80">
+                                </div>
+                                <div class="form-group">
+                                    <label for="b-dob">Date of Birth <span class="req" aria-hidden="true">*</span></label>
+                                    <input type="date" id="b-dob" name="dob" required>
+                                </div>
+                            </div>
+
+                            <div class="field-grid">
+                                <div class="form-group">
+                                    <label for="b-grade">Current Grade Level <span class="req" aria-hidden="true">*</span></label>
+                                    <select id="b-grade" name="gradeLevel" required>
+                                        <option value="">Select grade</option>
+                                        <option value="grade4">Grade 4</option>
+                                        <option value="grade5">Grade 5</option>
+                                        <option value="grade6">Grade 6</option>
+                                        <option value="grade7">Grade 7</option>
+                                        <option value="grade8">Grade 8</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="b-house">Which Boarding House?</label>
+                                    <select id="b-house" name="house">
+                                        <option value="">Select house</option>
+                                        <option value="boys-primary">Boys' Primary House</option>
+                                        <option value="boys-high">Boys' High School House</option>
+                                        <option value="girls-primary">Girls' Primary House</option>
+                                        <option value="girls-high">Girls' High School House</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Boarding Type</label>
+                                <div class="choice-chips" role="group" aria-label="Boarding type">
+                                    <label class="chip"><input type="radio" name="boardingType" value="full"><span>Full Boarding (5-7 days)</span></label>
+                                    <label class="chip"><input type="radio" name="boardingType" value="weekly"><span>Weekly Boarding (Mon-Fri)</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">2</span>
+                                <h3>Health &amp; Care</h3>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="b-medical">Any Medical Conditions or Allergies?</label>
+                                <textarea id="b-medical" name="medicalNotes" rows="3" maxlength="400" placeholder="Please describe any conditions, medications, or allergies"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="b-statement">Parent/Guardian Statement</label>
+                                <textarea id="b-statement" name="guardianStatement" rows="3" maxlength="500" placeholder="Why do you choose boarding education for your child?"></textarea>
+                            </div>
+
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">3</span>
+                                <h3>Documents</h3>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="b-docs">Document Upload</label>
+                                <label class="dropzone" for="b-docs">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16.5a.75.75 0 0 0 .75-.75V4.81l2.72 2.72a.75.75 0 1 0 1.06-1.06l-4-4a.75.75 0 0 0-1.06 0l-4 4a.75.75 0 0 0 1.06 1.06l2.72-2.72v10.94c0 .414.336.75.75.75Z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M4.5 12.75a.75.75 0 0 1 .75.75v5.25a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V13.5a.75.75 0 0 1 1.5 0v5.25a3 3 0 0 1-3 3H6.75a3 3 0 0 1-3-3V13.5a.75.75 0 0 1 .75-.75Z"/></svg>
+                                    <span class="dropzone-main">Click to upload documents</span>
+                                    <span class="dropzone-sub">Supports PDF, JPG, PNG or DOCX (max 3 files)</span>
+                                </label>
+                                <input type="file" id="b-docs" name="documents" accept=".pdf,.jpg,.png,.docx" multiple hidden>
+                                <small class="hint">Required: Birth certificate, passport photos, medical records, previous reports</small>
+                            </div>
+
+                            <button type="submit" class="btn-apply form-submit">Submit Boarding Application</button>
+                        </div>
+
+                        <!-- Parent/Guardian contact (shared) -->
+                        <div class="guardian-block">
+                            <div class="form-section-title">
+                                <span class="form-section-num" aria-hidden="true">4</span>
+                                <h3>Parent/Guardian Contact</h3>
+                            </div>
+                            <div class="field-grid">
+                                <div class="form-group">
+                                    <label for="g-name">Parent/Guardian Full Name <span class="req" aria-hidden="true">*</span></label>
+                                    <input type="text" id="g-name" name="guardianName" required autocomplete="name" placeholder="e.g. Yaw Boateng" maxlength="80">
+                                </div>
+                                <div class="form-group">
+                                    <label for="g-email">Parent/Guardian Email <span class="req" aria-hidden="true">*</span></label>
+                                    <input type="email" id="g-email" name="guardianEmail" required autocomplete="email" placeholder="you@example.com" maxlength="120">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="g-phone">Parent/Guardian Phone</label>
+                                <input type="tel" id="g-phone" name="guardianPhone" autocomplete="tel" placeholder="+233 ..." maxlength="20">
+                            </div>
+                            <p class="form-note">We will use these details to confirm your application by email. A reference number is sent on submission.</p>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </section>
@@ -311,6 +403,8 @@
         </div>
     </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+        <script src="js/admission-pdf.js"></script>
         <script src="js/app-form.js"></script>
         <script src="js/scripts.js"></script>
 </body>

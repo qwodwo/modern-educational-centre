@@ -264,7 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
             var name = link.getAttribute('data-tab');
             if (!name) return;
             container.querySelectorAll('.tab-link').forEach(function(other) {
-                other.classList.toggle('active', other === link);
+                var isActive = other === link;
+                other.classList.toggle('active', isActive);
+                other.setAttribute('aria-selected', isActive ? 'true' : 'false');
             });
             container.querySelectorAll('.tab-content').forEach(function(content) {
                 content.classList.toggle('active', content.id === name + '-tab');

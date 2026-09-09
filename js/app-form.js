@@ -1,17 +1,17 @@
-// Phase 4: application engine - submits the index.html "Apply Now" form to /api/applications
+// Application engine - submits the admission form to /api/applications
 (function() {
   var GUARDIAN_HTML =
     '<div class="form-group">' +
     '  <label>Parent/Guardian Full Name</label>' +
-    '  <input type="text" id="g-name" required placeholder="e.g. Yaw Boateng">' +
+    '  <input type="text" id="g-name" name="guardianName" required placeholder="e.g. Yaw Boateng" maxlength="80">' +
     '</div>' +
     '<div class="form-group">' +
     '  <label>Parent/Guardian Email</label>' +
-    '  <input type="email" id="g-email" required placeholder="you@example.com">' +
+    '  <input type="email" id="g-email" name="guardianEmail" required placeholder="you@example.com" maxlength="120">' +
     '</div>' +
     '<div class="form-group">' +
     '  <label>Parent/Guardian Phone</label>' +
-    '  <input type="tel" id="g-phone" placeholder="+233 ...">' +
+    '  <input type="tel" id="g-phone" name="guardianPhone" placeholder="+233 ..." maxlength="20">' +
     '</div>';
 
   function showStatus(form, ok, text) {
@@ -28,18 +28,28 @@
     box.textContent = text;
   }
 
-  function val(sel, tab) {
-    var el = tab.querySelector(sel);
+  // Read a field by name first (scoped to root), falling back to a positional selector.
+  function get(root, name, fallback) {
+    if (name) {
+      var named = root.querySelector('[name="' + name + '"]');
+      if (named) return named;
+    }
+    return fallback ? root.querySelector(fallback) : null;
+  }
+
+  function val(root, name, fallback) {
+    var el = get(root, name, fallback);
     return el ? el.value.trim() : '';
   }
 
-  function checked(groupName, tab) {
-    var el = tab.querySelector('input[name="' + groupName + '"]:checked');
+  function checked(root, name, legacy) {
+    var el = root.querySelector('input[name="' + name + '"]:checked');
+    if (!el && legacy) el = root.querySelector(legacy + ':checked');
     return el ? el.value : '';
   }
 
   function readDocs(fileInput) {
-    var files = Array.from(fileInput.files || []).slice(0, 3);
+    var files = Array.from(fileInput && fileInput.files ? fileInput.files : []).slice(0, 3);
     return Promise.all(files.map(function(file) {
       return new Promise(function(resolve) {
         var reader = new FileReader();
@@ -56,8 +66,8 @@
     var form = document.getElementById('applicationForm');
     if (!form) return;
 
-    // add guardian contact block (single, shown for both tabs)
-    if (!document.getElementById('g-name')) {
+    // add guardian contact block only if the markup does not already include one
+    if (!form.querySelector('[name="guardianName"]')) {
       var guardian = document.createElement('div');
       guardian.innerHTML = '<h3 style="margin:.5rem 0">Parent/Guardian Contact</h3>' + GUARDIAN_HTML;
       form.appendChild(guardian);
@@ -69,23 +79,32 @@
       if (!active) { showStatus(form, false, 'Please select a programme tab.'); return; }
       var isBoarding = active.id === 'boarding-tab';
 
-      var gName = val('#g-name', form);
-      var gEmail = val('#g-email', form);
-      var gPhone = val('#g-phone', form);
+      var gName = val(form, 'guardianName');
+      var gEmail = val(form, 'guardianEmail');
+      var gPhone = val(form, 'guardianPhone');
+      if (gName === '' && document.getElementById('g-name')) gName = document.getElementById('g-name').value.trim();
+      if (gEmail === '' && document.getElementById('g-email')) gEmail = document.getElementById('g-email').value.trim();
+      if (gPhone === '' && document.getElementById('g-phone')) gPhone = document.getElementById('g-phone').value.trim();
       if (!gName || !gEmail) { showStatus(form, false, 'Please provide the parent/guardian name and email.'); return; }
+
+      var house = val(active, 'house');
+      var medical = val(active, 'medicalNotes', 'textarea');
+      var statement = val(active, 'guardianStatement');
+      var orientation = val(active, 'orientation');
+      if (!isBoarding && orientation === '' && active.querySelectorAll('select')[1]) orientation = active.querySelectorAll('select')[1].value;
 
       var app = {
         stream: isBoarding ? 'boarding' : 'day',
-        studentName: val('input[type="text"]', active),
-        dob: val('input[type="date"]', active),
-        gradeLevel: val('select', active),
+        studentName: val(active, 'studentName', 'input[type="text"]'),
+        dob: val(active, 'dob', 'input[type="date"]'),
+        gradeLevel: val(active, 'gradeLevel', 'select'),
         humanGrade: null,
-        house: isBoarding ? val('select:nth-of-type(2)', active) : '',
-        boardingType: isBoarding ? checked('boarding-type', active) : '',
-        medicalNotes: isBoarding ? (active.querySelectorAll('textarea')[0] || {}).value || '' : '',
-        guardianStatement: isBoarding ? (active.querySelectorAll('textarea')[1] || {}).value || '' : '',
-        orientation: !isBoarding ? active.querySelectorAll('select')[1].value : '',
-        transport: !isBoarding ? checked('transport', active) : '',
+        house: house,
+        boardingType: isBoarding ? checked(active, 'boardingType', 'input[name="boarding-type"]') : '',
+        medicalNotes: isBoarding ? medical : '',
+        guardianStatement: isBoarding ? statement : '',
+        orientation: !isBoarding ? orientation : '',
+        transport: !isBoarding ? checked(active, 'transport') : '',
         programme: Array.from(active.querySelectorAll('input[name="programme"]:checked')).map(function(c) { return c.value; }),
         guardianName: gName,
         guardianEmail: gEmail,

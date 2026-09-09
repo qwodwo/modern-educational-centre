@@ -8,7 +8,7 @@
     <meta name="description"
         content="Modern educational centre offering Preschool to Junior High School Day & Boarding programmes">
     <link rel="icon" type="image/x-icon" href="images/logo/school logo.jpg">
-    <link rel="stylesheet" href="css/styles.css?v=7">
+    <link rel="stylesheet" href="css/styles.css?v=8">
 </head>
 
 <body>
@@ -168,17 +168,17 @@
 
                         <div class="form-group">
                             <label>Student's Full Name</label>
-                            <input type="text" required>
+                            <input type="text" name="studentName" required>
                         </div>
 
                         <div class="form-group">
                             <label>Date of Birth</label>
-                            <input type="date" required>
+                            <input type="date" name="dob" required>
                         </div>
 
                         <div class="form-group">
                             <label>Current Grade Level</label>
-                            <select required>
+                            <select name="gradeLevel" required>
                                 <option value="">Select grade</option>
                                 <option value="preschool">Preschool</option>
                                 <option value="kindergarten">Kindergarten</option>
@@ -204,7 +204,7 @@
 
                         <div class="form-group">
                             <label>Has the student attended our orientation?</label>
-                            <select>
+                            <select name="orientation">
                                 <option value="">Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -213,7 +213,7 @@
 
                         <div class="form-group">
                             <label>Document Upload</label>
-                            <input type="file" accept=".pdf,.jpg,.png,.docx">
+                            <input type="file" name="documents" accept=".pdf,.jpg,.png,.docx">
                             <small>Required: Birth certificate, passport photo, previous school reports</small>
                         </div>
 
@@ -234,17 +234,17 @@
 
                         <div class="form-group">
                             <label>Student's Full Name</label>
-                            <input type="text" required>
+                            <input type="text" name="studentName" required>
                         </div>
 
                         <div class="form-group">
                             <label>Date of Birth</label>
-                            <input type="date" required>
+                            <input type="date" name="dob" required>
                         </div>
 
                         <div class="form-group">
                             <label>Current Grade Level</label>
-                            <select required>
+                            <select name="gradeLevel" required>
                                 <option value="">Select grade</option>
                                 <option value="grade4">Grade 4</option>
                                 <option value="grade5">Grade 5</option>
@@ -256,7 +256,7 @@
 
                         <div class="form-group">
                             <label>Which Boarding House?</label>
-                            <select>
+                            <select name="house">
                                 <option value="">Select house</option>
                                 <option value="boys-primary">Boys' Primary House</option>
                                 <option value="boys-high">Boys' High School House</option>
@@ -267,7 +267,7 @@
 
                         <div class="form-group">
                             <label>Boarding Type</label>
-                            <label><input type="radio" name="boarding-type" value="full"> Full Boarding (5-7
+                            <label><input type="radio" name="boardingType" value="full"> Full Boarding (5-7
                                 days/week)</label>
                             <label><input type="radio" name="boarding-type" value="weekly"> Weekly Boarding
                                 (Monday-Friday)</label>
@@ -275,20 +275,20 @@
 
                         <div class="form-group">
                             <label>Any Medical Conditions or Allergies?</label>
-                            <textarea rows="3"
+                            <textarea rows="3" name="medicalNotes"
                                 placeholder="Please describe any conditions, medications, or allergies"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Document Upload</label>
-                            <input type="file" accept=".pdf,.jpg,.png,.docx">
+                            <input type="file" name="documents" accept=".pdf,.jpg,.png,.docx">
                             <small>Required: Birth certificate, passport photos, medical records, previous
                                 reports</small>
                         </div>
 
                         <div class="form-group">
                             <label>Parent/Guardian Statement</label>
-                            <textarea rows="3"
+                            <textarea rows="3" name="guardianStatement"
                                 placeholder="Why do you choose boarding education for your child?"></textarea>
                         </div>
 
