@@ -217,6 +217,7 @@ textarea:focus-visible {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -250,7 +251,6 @@ textarea:focus-visible {
 .nav-actions {
     display: flex;
     gap: 1rem;
-    margin-left: auto;
 }
 
 /* --- Enhanced Button Styles --- */
@@ -621,11 +621,10 @@ a.btn:hover::after {
         text-overflow: ellipsis;
     }
 
-    .nav-logo img {
+.nav-logo img {
         height: 32px;
         flex: none;
     }
-}
 
     .nav-actions .btn-secondary {
         padding: 0.5rem 0.9rem;
@@ -1017,7 +1016,7 @@ a.btn:hover::after {
 
     .nav-actions {
         gap: 0.5rem;
-        margin-left: auto;
+        margin-left: 0.5rem;
     }
 
     .nav-container {
