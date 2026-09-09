@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Educational Centre - Contact Us</title>
-    <meta name="description" content="Contact Modern Educational Centre for admissions inquiries">
+    <title>Modern Educational Centre - Admission Form</title>
+    <meta name="description" content="Complete the Modern Educational Centre admission form online or download a copy to print and fill.">
     <link rel="icon" type="image/x-icon" href="images/logo/school logo.jpg">
     <link rel="stylesheet" href="css/styles.css?v=7">
 </head>
@@ -39,7 +39,7 @@
                 <li class="dropdown">
     <a href="#">Admissions <svg class="dropdown-caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"/></svg></a>
     <ul class="dropdown-content">
-        <li><a href="admission-form.html">Admissions</a></li>
+        <li><a href="admission-form.html" class="active">Admissions</a></li>
         <li><a href="admission-process.html">Admission Process</a></li>
         <li><a href="admission-policy.html">Admission Policy</a></li>
     </ul>
@@ -71,7 +71,7 @@
                         <li><a href="auth/login.html?role=parent">Parent Portal</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
 
             <!-- Action Buttons -->
@@ -102,105 +102,166 @@
 
     <!-- Page Hero -->
     <section class="page-hero" aria-labelledby="page-hero-title">
-        <h1 id="page-hero-title">Contact</h1>
+        <h1 id="page-hero-title">Admission Form</h1>
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="index.html">Home</a>
             <span class="sep" aria-hidden="true">/</span>
-            <span aria-current="page">Contact</span>
+            <span aria-current="page">Admission Form</span>
         </nav>
     </section>
 
+
     <!-- Main Content -->
     <main id="main" class="content-sections">
-        <section class="contact-section">
+
+        <!-- Admission Form Section -->
+        <section class="admissions-section">
             <div class="section-container">
+                <div class="section-header">
+                    <h2>Admission Form</h2>
+                </div>
                 <div class="section-content">
-                    <div class="contact-layout">
-
-                        <div class="contact-form-section">
-                            <h3>Send Us a Message</h3>
-                            <form class="contact-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="name">Your Name</label>
-                                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+<div class="apply-now-box">
+                                        <h3>Admission Form</h3>
+                                        <p>Complete our admission form below or download a copy of the admission form here.</p>
+                                        <a href="admission-form-print.html" class="btn-apply" target="_blank" rel="noopener">Download</a>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="email">Your Email</label>
-                                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                
+                                    <div class="application-tabs">
+                                        <div class="tab-link active" data-tab="day">Day School Admission</div>
+                                        <div class="tab-link" data-tab="boarding">Boarding Admission</div>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input type="text" id="subject" name="subject" placeholder="What is this about?">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message">Your Message <span class="opt">(optional)</span></label>
-                                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
-                                </div>
-
-                                <button type="submit" class="btn-primary">Send Message</button>
-                            </form>
-                        </div>
-
-                        <aside class="contact-aside">
-
-                            <div class="info-card">
-                                <h3>Contact Info</h3>
-                                <p>We will love to hear from you</p>
-                                <h4>General Enquires</h4>
-                                <div class="info-row">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"/></svg>
-                                    <span><strong>Phone:</strong>&nbsp;+233 249458552</span>
-                                </div>
-                                <div class="info-row">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0l9.714-5.978Z"/></svg>
-<span><strong>Email:</strong>&nbsp;moderneducentre@gmail.com</span>
-                                </div>
-                            </div>
-
-                            <div class="info-card">
-                                <h3>School Hours</h3>
-                                <div class="hours-row">
-                                    <span>Mon - Friday</span>
-                                    <span>08.00 to 04.00</span>
-                                </div>
-                                <div class="hours-row">
-                                    <span>Saturday / Sunday</span>
-<span class="closed">Closed</span>
-                                </div>
-                            </div>
-
-                            <div class="info-card">
-                                <h3>Follow Us</h3>
-                                <div class="social-row">
-                                    <a href="#" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Modern Educational Centre on Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
-                                    <a href="#" target="_blank" rel="noopener" class="social-link social-instagram" aria-label="Modern Educational Centre on Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439Z"/></svg></a>
-                                    <a href="#" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="Modern Educational Centre on WhatsApp" title="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-<a href="#" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="Modern Educational Centre on YouTube" title="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-
-                                    <a href="#" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="Modern Educational Centre on TikTok" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.9 2.9 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
-                                </div>
-                            </div>
-
-</aside>
-
-                    </div>
-
-                    <div class="contact-map-wide">
-                        <h3>Locate Us</h3>
-                        <p class="locate-line">Close to ECG Office, Mama&rsquo;s Inn. | CC Bruce Road, Sahara-Dansoman, Accra</p>
-                        <div class="contact-map">
-                            <iframe src="https://maps.google.com/maps?q=6.699971,-1.748271&amp;hl=en&amp;z=17&amp;output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Modern Educational Centre"></iframe>
-                        </div>
-                    </div>
+                
+                                    <form class="application-form" id="applicationForm">
+                                        <div class="tab-content active" id="day-tab">
+                                            <h3>Day School Admission</h3>
+                                            <p>Daily tuition programme for local students. Transportation routes available.</p>
+                
+                                            <div class="form-group">
+                                                <label>Student's Full Name</label>
+                                                <input type="text" required>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Date of Birth</label>
+                                                <input type="date" required>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Current Grade Level</label>
+                                                <select required>
+                                                    <option value="">Select grade</option>
+                                                    <option value="preschool">Preschool</option>
+                                                    <option value="kindergarten">Kindergarten</option>
+                                                    <option value="grade1">Grade 1</option>
+                                                    <option value="grade2">Grade 2</option>
+                                                    <option value="grade3">Grade 3</option>
+                                                    <option value="grade4">Grade 4</option>
+                                                    <option value="grade5">Grade 5</option>
+                                                    <option value="grade6">Grade 6</option>
+                                                    <option value="grade7">Grade 7</option>
+                                                    <option value="grade8">Grade 8</option>
+                                                </select>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Programme Interest</label>
+                                                <label><input type="checkbox" name="programme" value="early-years"> Early Years (Preschool-Kindergarten)</label>
+                                                <label><input type="checkbox" name="programme" value="primary"> Primary (Grades 1-5)</label>
+                                                <label><input type="checkbox" name="programme" value="high-school"> High School (Grades 6-8)</label>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Has the student attended our orientation?</label>
+                                                <select>
+                                                    <option value="">Select</option>
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Document Upload</label>
+                                                <input type="file" accept=".pdf,.jpg,.png,.docx">
+                                                <small>Required: Birth certificate, passport photo, previous school reports</small>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Transportation Need</label>
+                                                <label><input type="radio" name="transport" value="yes"> Yes, need bus transport</label>
+                                                <label><input type="radio" name="transport" value="no"> No, will provide own transport</label>
+                                            </div>
+                
+                                            <button type="submit" class="btn-apply">Submit Day School Application</button>
+                                        </div>
+                
+                                        <div class="tab-content" id="boarding-tab">
+                                            <h3>Boarding Admission</h3>
+                                            <p>Residential programme with full-care accommodation. House system supervision.</p>
+                
+                                            <div class="form-group">
+                                                <label>Student's Full Name</label>
+                                                <input type="text" required>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Date of Birth</label>
+                                                <input type="date" required>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Current Grade Level</label>
+                                                <select required>
+                                                    <option value="">Select grade</option>
+                                                    <option value="grade4">Grade 4</option>
+                                                    <option value="grade5">Grade 5</option>
+                                                    <option value="grade6">Grade 6</option>
+                                                    <option value="grade7">Grade 7</option>
+                                                    <option value="grade8">Grade 8</option>
+                                                </select>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Which Boarding House?</label>
+                                                <select>
+                                                    <option value="">Select house</option>
+                                                    <option value="boys-primary">Boys' Primary House</option>
+                                                    <option value="boys-high">Boys' High School House</option>
+                                                    <option value="girls-primary">Girls' Primary House</option>
+                                                    <option value="girls-high">Girls' High School House</option>
+                                                </select>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Boarding Type</label>
+                                                <label><input type="radio" name="boarding-type" value="full"> Full Boarding (5-7 days/week)</label>
+                                                <label><input type="radio" name="boarding-type" value="weekly"> Weekly Boarding (Monday-Friday)</label>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Any Medical Conditions or Allergies?</label>
+                                                <textarea rows="3" placeholder="Please describe any conditions, medications, or allergies"></textarea>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Document Upload</label>
+                                                <input type="file" accept=".pdf,.jpg,.png,.docx">
+                                                <small>Required: Birth certificate, passport photos, medical records, previous reports</small>
+                                            </div>
+                
+                                            <div class="form-group">
+                                                <label>Parent/Guardian Statement</label>
+                                                <textarea rows="3" placeholder="Why do you choose boarding education for your child?"></textarea>
+                                            </div>
+                
+                                            <button type="submit" class="btn-apply">Submit Boarding Application</button>
+                                        </div>
+                                    </form>
                 </div>
             </div>
         </section>
-    </main>
 
+    </main>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -250,6 +311,7 @@
         </div>
     </footer>
 
+        <script src="js/app-form.js"></script>
         <script src="js/scripts.js"></script>
 </body>
 </html>
