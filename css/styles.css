@@ -2505,3 +2505,8 @@ th {
         height: 220px;
     }
 }
+
+/* Anchor jump: keep section targets clear of the fixed header */
+.programme-card[id] {
+    scroll-margin-top: 110px;
+}

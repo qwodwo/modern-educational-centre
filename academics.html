@@ -6,7 +6,7 @@
     <title>Modern Educational Centre - Academics</title>
     <meta name="description" content="Learn about our academic programmes from Preschool to Junior High School">
     <link rel="icon" type="image/x-icon" href="images/logo/school logo.jpg">
-    <link rel="stylesheet" href="css/styles.css?v=4">
+    <link rel="stylesheet" href="css/styles.css?v=5">
 </head>
 <body>
 
@@ -37,7 +37,16 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="admissions.html">Admissions</a></li>
-                <li><a href="academics.html" class="active">Academics</a></li>
+                <li class="dropdown">
+    <a href="#">Academics <svg class="dropdown-caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"/></svg></a>
+    <ul class="dropdown-content">
+        <li><a href="academics.html" class="active">Academics</a></li>
+        <li><a href="academics.html#preschool">Pre-School</a></li>
+        <li><a href="academics.html#primary">Primary School</a></li>
+        <li><a href="academics.html#junior-high">Junior High School</a></li>
+        <li><a href="news.html">Event Calendar</a></li>
+    </ul>
+</li>
                 <li class="dropdown">
                     <a href="#">Student Zone <svg class="dropdown-caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"/></svg></a>
                     <ul class="dropdown-content">
@@ -87,17 +96,27 @@
     <!-- Main Content -->
     <main id="main" class="content-sections">
 
+        <!-- Page Hero -->
+        <section class="page-hero" aria-labelledby="page-hero-title">
+            <h1 id="page-hero-title">Academics</h1>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep" aria-hidden="true">/</span>
+                <span aria-current="page">Academics</span>
+            </nav>
+        </section>
+
         <!-- Academics Section -->
         <section class="academics-section" id="academics">
             <div class="section-container">
                 <div class="section-header">
-                    <h2><span class="section-icon">ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€¦Ã‚Â¡</span> Academics</h2>
+                    <h2>Our Programmes</h2>
                 </div>
                 <div class="section-content">
                     <p>Our academic programmes span Preschool, Primary, and Junior High School levels, carefully designed to meet international standards while respecting local context. Students explore a rich curriculum that includes sciences, humanities, arts, and physical education.</p>
                     
                     <div class="programme-cards">
-                        <div class="programme-card">
+                        <div class="programme-card" id="preschool">
                             <h3>Preschool</h3>
                             <p>Early learning foundation through play-based exploration and guided discovery. Focus on social-emotional development, early literacy, numeracy, and creative expression.</p>
                             <ul>
@@ -106,7 +125,7 @@
                                 <li>Student-teacher ratio: 8:1</li>
                             </ul>
                         </div>
-                        <div class="programme-card">
+                        <div class="programme-card" id="primary">
                             <h3>Primary School</h3>
                             <p>Core curriculum development in literacy, numeracy, critical thinking, and problem-solving skills. Foundation subjects include language, mathematics, sciences, social studies, and arts.</p>
                             <ul>
@@ -115,7 +134,7 @@
                                 <li>Daily physical education</li>
                             </ul>
                         </div>
-                        <div class="programme-card">
+                        <div class="programme-card" id="junior-high">
                             <h3>Junior High</h3>
                             <p>Advanced preparation for secondary education with specialized subject streams. Students explore deeper concepts and develop independent learning skills across a broad curriculum.</p>
                             <ul>
