@@ -212,36 +212,11 @@ textarea:focus-visible {
     width: auto;
 }
 
-.nav-logo-text {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 0.1em;
-    line-height: 1.15;
-    color: var(--white);
-    text-transform: uppercase;
-    white-space: nowrap;
-    position: relative;
-    padding-bottom: 4px;
-}
-
-.nav-logo-text::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(90deg, #d4a017, #f0c94a);
-    border-radius: 2px;
-}
-
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
     align-items: center;
-    margin-left: auto;
 }
 
 .nav-links a {
@@ -275,6 +250,7 @@ textarea:focus-visible {
 .nav-actions {
     display: flex;
     gap: 1rem;
+    margin-left: auto;
 }
 
 /* --- Enhanced Button Styles --- */
@@ -645,12 +621,7 @@ a.btn:hover::after {
         text-overflow: ellipsis;
     }
 
-    .nav-logo-text {
-        font-size: 0.7rem;
-        letter-spacing: 0.06em;
-    }
-
-.nav-logo img {
+    .nav-logo img {
         height: 32px;
         flex: none;
     }
@@ -1046,7 +1017,7 @@ a.btn:hover::after {
 
     .nav-actions {
         gap: 0.5rem;
-        margin-left: 0.5rem;
+        margin-left: auto;
     }
 
     .nav-container {
