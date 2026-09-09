@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form - Modern Educational Centre</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111827;
+            background: #f3f4f6;
+            padding: 2rem 1rem;
+        }
+        .sheet {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2.5rem 3rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .brand {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .brand h1 { font-size: 1.6rem; color: #1e3a8a; }
+        .brand p { font-size: 0.9rem; color: #4b5563; margin-top: 0.25rem; }
+        h2 {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #111827;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta { text-align: center; font-size: 0.85rem; color: #4b5563; margin-bottom: 1.5rem; }
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 1px solid #d1d5db;
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.25rem;
+        }
+        .field { margin-bottom: 1rem; }
+        .field label { display: block; font-size: 0.85rem; font-weight: 600; color: #374151; margin-bottom: 0.35rem; }
+        .line { border-bottom: 1px solid #9ca3af; min-height: 1.6rem; }
+        .line.short { max-width: 60%; }
+        .multi { border-bottom: 1px solid #9ca3af; min-height: 3.2rem; }
+        .inline { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .inline .field { flex: 1; min-width: 220px; }
+        .checkbox { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: #111827; }
+        .sign { display: flex; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
+        .sign .field { flex: 1; min-width: 240px; }
+        .actions { text-align: center; margin-top: 1.5rem; }
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover { background: #1d4ed8; }
+        .note { text-align: center; font-size: 0.8rem; color: #6b7280; margin-top: 1rem; }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .sheet { border: none; padding: 0.5in; }
+            .actions, .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sheet">
+        <div class="brand">
+            <h1>Modern Educational Centre</h1>
+            <p>Preschool | Primary School | Junior High School</p>
+        </div>
+        <h2>Admission Form</h2>
+        <p class="meta">Please complete this form clearly in block letters. Attach all required documents.</p>
+
+        <div class="section-title">Student Information</div>
+        <div class="inline">
+            <div class="field">
+                <label>Student's Full Name</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Date of Birth</label>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="field">
+                <label>Gender</label>
+                <div class="line short"></div>
+            </div>
+            <div class="field">
+                <label>Grade / Class Applying For</label>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="field">
+            <label>Programme</label>
+            <div class="checkbox">
+                <span><input type="checkbox"> Day School (Preschool - Grade 8)</span>
+                <span><input type="checkbox"> Boarding (Grades 4 - 8)</span>
+                <span><input type="checkbox"> Early Years (Preschool - Kindergarten)</span>
+                <span><input type="checkbox"> Primary School</span>
+                <span><input type="checkbox"> Junior High School</span>
+            </div>
+        </div>
+        <div class="field">
+            <label>Previous School (if any)</label>
+            <div class="line"></div>
+        </div>
+
+        <div class="section-title">Day School Only (if applicable)</div>
+        <div class="inline">
+            <div class="field">
+                <label>Transportation Needed?</label>
+                <div class="line short"></div>
+            </div>
+            <div class="field">
+                <label>Has the student attended orientation?</label>
+                <div class="line short"></div>
+            </div>
+        </div>
+
+        <div class="section-title">Boarding Only (if applicable)</div>
+        <div class="inline">
+            <div class="field">
+                <label>Preferred Boarding House</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Boarding Type</label>
+                <div class="line short"></div>
+            </div>
+        </div>
+        <div class="field">
+            <label>Any Medical Conditions or Allergies?</label>
+            <div class="multi"></div>
+        </div>
+        <div class="field">
+            <label>Parent/Guardian Statement - Why do you choose boarding education for your child?</label>
+            <div class="multi"></div>
+        </div>
+
+        <div class="section-title">Parent / Guardian Information</div>
+        <div class="inline">
+            <div class="field">
+                <label>Full Name</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Relationship to Student</label>
+                <div class="line short"></div>
+            </div>
+        </div>
+        <div class="inline">
+            <div class="field">
+                <label>Email Address</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Phone Number</label>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="field">
+            <label>Home Address</label>
+            <div class="line"></div>
+        </div>
+
+        <div class="section-title">Required Documents Checklist</div>
+        <div class="field checkbox">
+            <span><input type="checkbox"> Birth Certificate</span>
+            <span><input type="checkbox"> Passport Photos</span>
+            <span><input type="checkbox"> Previous School Reports</span>
+            <span><input type="checkbox"> Medical / Immunization Records</span>
+        </div>
+
+        <div class="sign">
+            <div class="field">
+                <label>Applicant's Parent / Guardian Signature</label>
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <label>Date</label>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+        </div>
+        <p class="note no-print">Tip: Use "Save as PDF" in the print dialog to keep an electronic copy.</p>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () { window.print(); }, 600);
+        });
+    </script>
+</body>
+</html>

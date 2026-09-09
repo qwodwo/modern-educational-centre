@@ -252,4 +252,20 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'mailto:moderneducentre@gmail.com?subject=' + subject + '&body=' + body;
         });
     }
+
+    // --- Application form tabs (Day School / Boarding) ---
+    document.querySelectorAll('.tab-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var bar = link.closest('.application-tabs');
+            var container = bar ? bar.parentNode : document;
+            var name = link.getAttribute('data-tab');
+            if (!name) return;
+            container.querySelectorAll('.tab-link').forEach(function(other) {
+                other.classList.toggle('active', other === link);
+            });
+            container.querySelectorAll('.tab-content').forEach(function(content) {
+                content.classList.toggle('active', content.id === name + '-tab');
+            });
+        });
+    });
 });
