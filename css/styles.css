@@ -2507,6 +2507,7 @@ th {
 }
 
 /* Anchor jump: keep section targets clear of the fixed header */
-.programme-card[id] {
+.programme-card[id],
+.apply-now-box[id] {
     scroll-margin-top: 110px;
 }
