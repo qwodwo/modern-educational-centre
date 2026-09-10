@@ -273,4 +273,24 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // --- Programme mode switch (single-section admission form) ---
+    var streamChips = document.getElementById('stream-chips');
+    if (streamChips) {
+        function applyStream() {
+            var isBoarding = !!streamChips.querySelector('input[value="boarding"]:checked');
+            var dayOpts = document.getElementById('day-options');
+            var boardOpts = document.getElementById('boarding-options');
+            var hint = document.getElementById('docs-hint');
+            if (dayOpts) dayOpts.hidden = isBoarding;
+            if (boardOpts) boardOpts.hidden = !isBoarding;
+            if (hint) {
+                hint.textContent = isBoarding
+                    ? 'Required: Birth certificate, passport photos, medical records, previous reports'
+                    : 'Required: Birth certificate, passport photo, previous school reports';
+            }
+        }
+        streamChips.addEventListener('change', applyStream);
+        applyStream();
+    }
 });

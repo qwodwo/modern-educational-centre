@@ -73,11 +73,17 @@
       form.appendChild(guardian);
     }
 
+    // A "stream mode" form chooses Day/Boarding via radio chips and keeps a
+    // single set of fields; a "tabbed mode" form splits the fields into tabs
+    // (used by the homepage Apply-Now form). Both submit the same payload.
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      var streamInput = form.querySelector('[name="stream"]:checked');
+      var singleMode = !!streamInput;
       var active = form.querySelector('.tab-content.active');
-      if (!active) { showStatus(form, false, 'Please select a programme tab.'); return; }
-      var isBoarding = active.id === 'boarding-tab';
+      if (!singleMode && !active) { showStatus(form, false, 'Please select a programme tab.'); return; }
+      var isBoarding = singleMode ? (streamInput.value === 'boarding') : active.id === 'boarding-tab';
+      var scope = singleMode ? form : active;
 
       var gName = val(form, 'guardianName');
       var gEmail = val(form, 'guardianEmail');
@@ -87,32 +93,32 @@
       if (gPhone === '' && document.getElementById('g-phone')) gPhone = document.getElementById('g-phone').value.trim();
       if (!gName || !gEmail) { showStatus(form, false, 'Please provide the parent/guardian name and email.'); return; }
 
-      var house = val(active, 'house');
-      var medical = val(active, 'medicalNotes', 'textarea');
-      var statement = val(active, 'guardianStatement');
-      var orientation = val(active, 'orientation');
-      if (!isBoarding && orientation === '' && active.querySelectorAll('select')[1]) orientation = active.querySelectorAll('select')[1].value;
+      var house = val(scope, 'house');
+      var medical = val(scope, 'medicalNotes', 'textarea');
+      var statement = val(scope, 'guardianStatement');
+      var orientation = val(scope, 'orientation');
+      if (!isBoarding && orientation === '' && !singleMode && scope.querySelectorAll('select')[1]) orientation = scope.querySelectorAll('select')[1].value;
 
       var app = {
         stream: isBoarding ? 'boarding' : 'day',
-        studentName: val(active, 'studentName', 'input[type="text"]'),
-        dob: val(active, 'dob', 'input[type="date"]'),
-        gradeLevel: val(active, 'gradeLevel', 'select'),
+        studentName: val(scope, 'studentName', 'input[type="text"]'),
+        dob: val(scope, 'dob', 'input[type="date"]'),
+        gradeLevel: val(scope, 'gradeLevel', 'select'),
         humanGrade: null,
-        house: house,
-        boardingType: isBoarding ? checked(active, 'boardingType', 'input[name="boarding-type"]') : '',
+        house: singleMode ? (isBoarding ? house : '') : house,
+        boardingType: isBoarding ? checked(scope, 'boardingType', 'input[name="boarding-type"]') : '',
         medicalNotes: isBoarding ? medical : '',
         guardianStatement: isBoarding ? statement : '',
         orientation: !isBoarding ? orientation : '',
-        transport: !isBoarding ? checked(active, 'transport') : '',
-        programme: Array.from(active.querySelectorAll('input[name="programme"]:checked')).map(function(c) { return c.value; }),
+        transport: !isBoarding ? checked(scope, 'transport') : '',
+        programme: Array.from(scope.querySelectorAll('input[name="programme"]:checked')).map(function(c) { return c.value; }),
         guardianName: gName,
         guardianEmail: gEmail,
         guardianPhone: gPhone,
         documents: []
       };
 
-      var fileInput = active.querySelector('input[type="file"]');
+      var fileInput = scope.querySelector('input[type="file"]') || form.querySelector('input[type="file"]');
       var btn = form.querySelector('button[type="submit"]');
       var original = btn && btn.textContent ? btn.textContent : '';
 
